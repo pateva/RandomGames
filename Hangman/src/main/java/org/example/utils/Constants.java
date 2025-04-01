@@ -5,6 +5,14 @@ public final class Constants {
         // Prevent instantiation
     }
 
+    public static final String YOUR_WORD = "YOUR WORD IS:";
+    public static final Character YOUR_LETTER_REPLACEMENT= '_';
+    public static final String GUESS_A_LETTER = "GUESS A LETTER OR TAP ZZ + ENTER TO GET A DIFFERENT WORD: ";
+    public static final String GET_ANOTHER_WORD = "ZZ";
+    public static final String PLAY_AGAIN = "Do you want to play again? (yes/no)";
+    public static final String PLAY_AGAIN_YES = "yes";
+    public static final String GUESSES_WORD = "CONGRATULATIONS! YOU GUESSED THE WORD!";
+
     public static final String[] WORDS = {
             "abacus", "abdomen", "ability", "abolish", "absent", "absorb", "abstract", "absurd", "accent", "accept",
             "access", "accident", "acclaim", "account", "accrue", "accuracy", "achieve", "acoustic", "acquire", "acrobat",

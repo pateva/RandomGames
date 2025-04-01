@@ -4,7 +4,7 @@ public enum HangmanState {
 
     STAGE0(0) {
         @Override
-        public void draw(String word) {
+        public void draw() {
             System.out.println("Welcome to Hangman!");
             System.out.println("You have 7 tries to guess the word.");
         }
@@ -17,7 +17,7 @@ public enum HangmanState {
     },
     STAGE1(1) {
         @Override
-        public void draw(String word) {
+        public void draw() {
             System.out.println("Wrong guess, try again");
             System.out.println();
             System.out.println();
@@ -33,7 +33,7 @@ public enum HangmanState {
     },
     STAGE2(2) {
         @Override
-        public void draw(String word) {
+        public void draw() {
             System.out.println("Wrong guess, try again");
             System.out.println("   |");
             System.out.println("   |");
@@ -52,7 +52,7 @@ public enum HangmanState {
     },
     STAGE3(3) {
         @Override
-        public void draw(String word) {
+        public void draw() {
             System.out.println("Wrong guess, try again");
             System.out.println("   ____________");
             System.out.println("   |");
@@ -72,7 +72,7 @@ public enum HangmanState {
     },
     STAGE4(4) {
         @Override
-        public void draw(String word) {
+        public void draw() {
             System.out.println("Wrong guess, try again");
             System.out.println("   ____________");
             System.out.println("   |          _|_");
@@ -92,7 +92,7 @@ public enum HangmanState {
     },
     STAGE5(5) {
         @Override
-        public void draw(String word) {
+        public void draw() {
             System.out.println("Wrong guess, try again");
             System.out.println("   ____________");
             System.out.println("   |          _|_");
@@ -112,7 +112,7 @@ public enum HangmanState {
     },
     STAGE6(6) {
         @Override
-        public void draw(String word) {
+        public void draw() {
             System.out.println("Wrong guess, try again");
             System.out.println("   ____________");
             System.out.println("   |          _|_");
@@ -132,8 +132,7 @@ public enum HangmanState {
     },
     STAGE7(7) {
         @Override
-        public void draw(String word) {
-            System.out.println("GAME OVER! The word was " + word);
+        public void draw() {
             System.out.println("   ____________");
             System.out.println("   |          _|_");
             System.out.println("   |         /   \\");
@@ -162,7 +161,7 @@ public enum HangmanState {
         return stage;
     }
 
-    public abstract void draw(String word);
+    public abstract void draw();
 
     public abstract HangmanState next();
 }

@@ -3,6 +3,10 @@ package org.example.games;
 import org.example.utils.Constants;
 import org.example.utils.HangmanState;
 
+import static org.example.utils.Constants.GUESSES_WORD;
+import static org.example.utils.Constants.YOUR_LETTER_REPLACEMENT;
+import static org.example.utils.Constants.YOUR_WORD;
+
 public class Hangman {
     private String word;
     private HangmanState hangmanState;
@@ -13,7 +17,7 @@ public class Hangman {
         this.setGuessedWord();
         hangmanState = HangmanState.STAGE0;
 
-        System.out.println("YOUR WORD IS:");
+        System.out.println(YOUR_WORD);
         this.printGuessedWord();
     }
 
@@ -23,19 +27,22 @@ public class Hangman {
 
     public boolean isWordGuessed() {
         for (Character character : guessedWord) {
-            if (character == '_') {
+            if (character == YOUR_LETTER_REPLACEMENT) {
                 return false;
             }
         }
+
+        System.out.println(GUESSES_WORD);
         return true;
     }
 
-    public String getAnotherWord() {
+    public void getAnotherWord() {
         this.word = Constants.WORDS[(int) (Math.random() * Constants.WORDS.length)];
         hangmanState = HangmanState.STAGE0;
         this.setGuessedWord();
 
-        return word;
+        System.out.println(YOUR_WORD);
+        this.printGuessedWord();
     }
 
     public void guessLetter(Character letter) {
@@ -48,7 +55,7 @@ public class Hangman {
             this.printGuessedWord();
         } else {
             hangmanState = hangmanState.next();
-            hangmanState.draw(word);
+            hangmanState.draw();
             this.printGuessedWord();
         }
     }
@@ -59,7 +66,7 @@ public class Hangman {
         this.guessedWord[word.length()-1] = word.charAt(word.length()-1);
 
         for (int i = 1; i < word.length()-1; i++) {
-            guessedWord[i] = '_';
+            guessedWord[i] = YOUR_LETTER_REPLACEMENT;
         }
     }
 
@@ -70,5 +77,4 @@ public class Hangman {
 
         System.out.println();
     }
-
 }
